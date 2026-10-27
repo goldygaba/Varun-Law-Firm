@@ -1,0 +1,8 @@
+{
+  "name": "Varun Law Firm",
+  "description": "Premium 3D legal practice portal for Advocate Varun Aggarwal. Specializing in High Court litigation, DRT debt recovery, RERA matters, consumer disputes, and legal advisory with seamless appointment scheduling.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

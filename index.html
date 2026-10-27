@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Resilience script: Ensure window.fetch is writable and handle extension hook collisions -->
+    <script>
+      (function() {
+        // Prevent extension errors (such as Similarweb / frame_ant) from breaking the page
+        window.addEventListener('error', function(event) {
+          try {
+            var filename = event.filename || '';
+            var message = event.message || '';
+            var errorStack = (event.error && event.error.stack) || '';
+            if (
+              filename.indexOf('chrome-extension://') !== -1 ||
+              message.indexOf('chrome-extension://') !== -1 ||
+              errorStack.indexOf('chrome-extension://') !== -1 ||
+              filename.indexOf('frame_ant') !== -1 ||
+              message.indexOf('frame_ant') !== -1 ||
+              message.indexOf('Cannot set property fetch of') !== -1 ||
+              errorStack.indexOf('Cannot set property fetch of') !== -1
+            ) {
+              event.preventDefault();
+              if (typeof event.stopImmediatePropagation === 'function') {
+                event.stopImmediatePropagation();
+              }
+              return true;
+            }
+          } catch (_) {}
+        }, true);
+
+        window.addEventListener('unhandledrejection', function(event) {
+          try {
+            var reason = event.reason;
+            var text = (reason && (reason.stack || reason.message || String(reason))) || '';
+            if (
+              text.indexOf('chrome-extension://') !== -1 ||
+              text.indexOf('frame_ant') !== -1 ||
+              text.indexOf('Cannot set property fetch of') !== -1
+            ) {
+              event.preventDefault();
+            }
+          } catch (_) {}
+        });
+
+        // Ensure window.fetch has a defined setter so extension wrappers can reassign window.fetch safely
+        try {
+          var originalFetch = window.fetch;
+          var customFetch = originalFetch;
+          Object.defineProperty(window, 'fetch', {
+            configurable: true,
+            enumerable: true,
+            get: function() {
+              return customFetch || originalFetch;
+            },
+            set: function(newFetch) {
+              customFetch = newFetch;
+            }
+          });
+        } catch (_) {
+          try {
+            var currentFetch = window.fetch;
+            Object.defineProperty(window, 'fetch', {
+              configurable: true,
+              enumerable: true,
+              writable: true,
+              value: currentFetch
+            });
+          } catch (_) {}
+        }
+      })();
+    </script>
+    <title id="meta-page-title">Varun Law Firm | Advocate Varun Aggarwal, Litigation & Legal Counsel</title>
+    <meta id="meta-page-desc" name="description" content="Varun Law Firm — Advocate Varun Aggarwal (LL.M). High Court litigation, DRT debt recovery, RERA disputes, Sec 138 cheque bounce, criminal bail, marriage protection, NRI legal services & family law." />
+    <meta id="meta-page-keywords" name="keywords" content="Varun Law Firm, Advocate Varun Aggarwal, High Court Lawyer Chandigarh, DRT Lawyer Panchkula, RERA Attorney Haryana, Cheque Bounce Sec 138, Marriage Protection High Court, Criminal Bail Lawyer, NRI Property Lawyer Punjab, Family Law 498A Advocate" />
+    <meta name="author" content="Varun Law Firm" />
+    <meta name="robots" content="index, follow" />
+    <link id="meta-canonical-url" rel="canonical" href="https://varunlawfirm.com" />
+    
+    <!-- Primary Open Graph Metadata (Base Chambers) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Varun Law Firm" />
+    <meta property="og:locale" content="en_IN" />
+    <meta id="og-title" property="og:title" content="Varun Law Firm | Advocate Varun Aggarwal, Litigation & Legal Counsel" />
+    <meta id="og-description" property="og:description" content="Strategic legal counsel before Punjab & Haryana High Court, DRT, RERA, Criminal Courts, Marriage Protection, Cheque Dishonour & NRI matters. Schedule a consultation." />
+    <meta id="og-url" property="og:url" content="https://varunlawfirm.com" />
+    <meta id="og-image" property="og:image" content="https://varunlawfirm.com/assets/aistudio/Gemini_Generated_Image_lq2uhjlq2uhjlq2u_aed156f1.png" />
+    <meta property="og:image:alt" content="Advocate Varun Aggarwal at Chambers Executive Office Desk" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Primary Twitter / X Card Metadata -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta id="twitter-title" name="twitter:title" content="Varun Law Firm | Advocate Varun Aggarwal, Litigation & Legal Counsel" />
+    <meta id="twitter-description" name="twitter:description" content="Strategic legal counsel for High Court, DRT, RERA, Criminal Defense, Cheque Bounce, NRI Legal Services, and Family Law. Book consultations with Advocate Varun Aggarwal." />
+    <meta id="twitter-image" name="twitter:image" content="https://varunlawfirm.com/assets/aistudio/Gemini_Generated_Image_lq2uhjlq2uhjlq2u_aed156f1.png" />
+    <meta id="twitter-url" name="twitter:url" content="https://varunlawfirm.com" />
+
+    <!-- Open Graph Direct Discovery Links for Specialized Practice Areas -->
+    <meta property="og:see_also" content="https://varunlawfirm.com/#civil-litigation" />
+    <meta property="og:see_also" content="https://varunlawfirm.com/#debt-recovery" />
+    <meta property="og:see_also" content="https://varunlawfirm.com/#rera-real-estate" />
+    <meta property="og:see_also" content="https://varunlawfirm.com/#cat-service-matters" />
+    <meta property="og:see_also" content="https://varunlawfirm.com/#consumer-disputes" />
+    <meta property="og:see_also" content="https://varunlawfirm.com/#commercial-contracts" />
+    <meta property="og:see_also" content="https://varunlawfirm.com/#regulatory-advisory" />
+    <meta property="og:see_also" content="https://varunlawfirm.com/#negotiable-instruments" />
+    <meta property="og:see_also" content="https://varunlawfirm.com/#marriage-protection" />
+    <meta property="og:see_also" content="https://varunlawfirm.com/#criminal-defense" />
+    <meta property="og:see_also" content="https://varunlawfirm.com/#nri-legal-services" />
+    <meta property="og:see_also" content="https://varunlawfirm.com/#family-law-matrimonial" />
+
+    <!-- Specific Open Graph & Twitter Metadata for Each Practice Area (Indexable by Search Spiders) -->
+    <!-- 1. High Court & Civil Litigation -->
+    <meta property="og:practice:civil-litigation:title" content="High Court & Civil Litigation Counsel | Advocate Varun Aggarwal" />
+    <meta property="og:practice:civil-litigation:description" content="Strategic civil litigation, writ petitions under Art. 226/227, RFA/RSA appeals, property partition, and urgent stay injunctions before Punjab & Haryana High Court." />
+    <meta property="og:practice:civil-litigation:url" content="https://varunlawfirm.com/#civil-litigation" />
+    <meta name="twitter:practice:civil-litigation:title" content="High Court & Civil Litigation Counsel | Advocate Varun Aggarwal" />
+    <meta name="twitter:practice:civil-litigation:description" content="Specialized civil suits, writ petitions, and High Court appeals across Chandigarh, Punjab, and Haryana." />
+
+    <!-- 2. Debt Recovery & SARFAESI Defense (DRT/DRAT) -->
+    <meta property="og:practice:debt-recovery:title" content="DRT & SARFAESI Debt Recovery Defense Advocate | Advocate Varun Aggarwal" />
+    <meta property="og:practice:debt-recovery:description" content="Challenging Section 13(2), 13(4) and Section 14 bank possession orders, Securitisation Applications under Sec. 17, e-auction stay, and OTS settlements at DRT Chandigarh." />
+    <meta property="og:practice:debt-recovery:url" content="https://varunlawfirm.com/#debt-recovery" />
+    <meta name="twitter:practice:debt-recovery:title" content="DRT & SARFAESI Defense Lawyer | Advocate Varun Aggarwal" />
+    <meta name="twitter:practice:debt-recovery:description" content="Borrower & guarantor legal defense against bank auction and SARFAESI possession at DRT-I & II Chandigarh." />
+
+    <!-- 3. Real Estate & RERA Advocacy -->
+    <meta property="og:practice:rera-real-estate:title" content="RERA Real Estate & Homebuyer Attorney | Advocate Varun Aggarwal" />
+    <meta property="og:practice:rera-real-estate:description" content="Authoritative counsel before HRERA Panchkula/Gurugram and Punjab RERA. Securing delayed possession interest, project refunds under Sec. 18, and recovery warrants." />
+    <meta property="og:practice:rera-real-estate:url" content="https://varunlawfirm.com/#rera-real-estate" />
+    <meta name="twitter:practice:rera-real-estate:title" content="RERA Homebuyer Attorney | Advocate Varun Aggarwal" />
+    <meta name="twitter:practice:rera-real-estate:description" content="Homebuyer refund and delayed possession interest advocacy before HRERA and Punjab RERA." />
+
+    <!-- 4. Central Administrative Tribunal (CAT) -->
+    <meta property="og:practice:cat-service-matters:title" content="Central Administrative Tribunal (CAT) Advocate | Advocate Varun Aggarwal" />
+    <meta property="og:practice:cat-service-matters:description" content="Counsel for central government employees, defence civilians, and postal/railway staff in pay disputes, MACP arrears, charge-sheet quashing, and CAT Chandigarh litigation." />
+    <meta property="og:practice:cat-service-matters:url" content="https://varunlawfirm.com/#cat-service-matters" />
+    <meta name="twitter:practice:cat-service-matters:title" content="CAT Service Matters Lawyer | Advocate Varun Aggarwal" />
+    <meta name="twitter:practice:cat-service-matters:description" content="Dedicated legal counsel for Central Government employees and defence civilians before CAT Chandigarh." />
+
+    <!-- 5. Consumer Protection & Deficiencies -->
+    <meta property="og:practice:consumer-disputes:title" content="Consumer Court & Insurance Dispute Advocate | Advocate Varun Aggarwal" />
+    <meta property="og:practice:consumer-disputes:description" content="Strategic prosecution before State & District Consumer Commissions for insurance claim repudiation, medical negligence, real estate defaults, and commercial deficiency." />
+    <meta property="og:practice:consumer-disputes:url" content="https://varunlawfirm.com/#consumer-disputes" />
+    <meta name="twitter:practice:consumer-disputes:title" content="Consumer Court Advocate | Advocate Varun Aggarwal" />
+    <meta name="twitter:practice:consumer-disputes:description" content="Filing and contesting claims for medical negligence, repudiated insurance policies, and service deficiencies." />
+
+    <!-- 6. Contract Drafting & Commercial Vetting -->
+    <meta property="og:practice:commercial-contracts:title" content="Commercial Contract Drafting & Legal Vetting | Advocate Varun Aggarwal" />
+    <meta property="og:practice:commercial-contracts:description" content="Precision drafting of MSAs, NDAs, non-compete covenants, commercial lease agreements, and corporate dispute resolution clauses under Indian contract and arbitration law." />
+    <meta property="og:practice:commercial-contracts:url" content="https://varunlawfirm.com/#commercial-contracts" />
+    <meta name="twitter:practice:commercial-contracts:title" content="Commercial Contract Lawyer | Advocate Varun Aggarwal" />
+    <meta name="twitter:practice:commercial-contracts:description" content="Drafting and vetting of business agreements, non-disclosure deeds, and corporate covenants." />
+
+    <!-- 7. Regulatory Compliance & Legal Advisory -->
+    <meta property="og:practice:regulatory-advisory:title" content="Regulatory Compliance & Corporate Legal Advisory | Advocate Varun Aggarwal" />
+    <meta property="og:practice:regulatory-advisory:description" content="Strategic legal opinions, statutory show-cause notice defense, MSME delayed payment recovery, and municipal clearance advisory across Chandigarh, Punjab, and Haryana." />
+    <meta property="og:practice:regulatory-advisory:url" content="https://varunlawfirm.com/#regulatory-advisory" />
+    <meta name="twitter:practice:regulatory-advisory:title" content="Regulatory Compliance Counsel | Advocate Varun Aggarwal" />
+    <meta name="twitter:practice:regulatory-advisory:description" content="Proactive legal opinions, statutory compliance, and corporate risk mitigation advisory." />
+
+    <!-- 8. Negotiable Instruments & Cheque Bounce (Sec. 138) -->
+    <meta property="og:practice:negotiable-instruments:title" content="Cheque Bounce & Sec 138 NI Act Advocate | Advocate Varun Aggarwal" />
+    <meta property="og:practice:negotiable-instruments:description" content="Aggressive prosecution & statutory defense in Section 138 cheque dishonour matters, 30-day legal notices, Sec. 143A 20% interim compensation, and compounding." />
+    <meta property="og:practice:negotiable-instruments:url" content="https://varunlawfirm.com/#negotiable-instruments" />
+    <meta name="twitter:practice:negotiable-instruments:title" content="Cheque Bounce & Sec 138 Advocate | Advocate Varun Aggarwal" />
+    <meta name="twitter:practice:negotiable-instruments:description" content="Statutory demand notices, Section 138 NI Act complaint filing, and interim compensation recovery in Tricity courts." />
+
+    <!-- 9. Marriage Protection & Life Liberty Petitions -->
+    <meta property="og:practice:marriage-protection:title" content="High Court Marriage Protection & Life Liberty Petitions | Advocate Varun Aggarwal" />
+    <meta property="og:practice:marriage-protection:description" content="Urgent Article 226 protection petitions before Punjab & Haryana High Court for runaway couples. Securing immediate police protection orders and safe house shelter." />
+    <meta property="og:practice:marriage-protection:url" content="https://varunlawfirm.com/#marriage-protection" />
+    <meta name="twitter:practice:marriage-protection:title" content="Marriage Protection High Court Lawyer | Advocate Varun Aggarwal" />
+    <meta name="twitter:practice:marriage-protection:description" content="Immediate High Court police protection orders and safe house directions for runaway couples." />
+
+    <!-- 10. Criminal Defense, Bail & FIR Quashing -->
+    <meta property="og:practice:criminal-defense:title" content="Criminal Defense, Anticipatory Bail & FIR Quashing | Advocate Varun Aggarwal" />
+    <meta property="og:practice:criminal-defense:description" content="Vigorous criminal defense before High Court and Sessions Courts. Securing Anticipatory Bail (438 CrPC / 482 BNSS), Regular Bail, FIR Quashing under 482, and trial defense." />
+    <meta property="og:practice:criminal-defense:url" content="https://varunlawfirm.com/#criminal-defense" />
+    <meta name="twitter:practice:criminal-defense:title" content="Criminal Defense & Bail Advocate | Advocate Varun Aggarwal" />
+    <meta name="twitter:practice:criminal-defense:description" content="Anticipatory bail, regular bail, Section 482 FIR quashing, and criminal trial advocacy across Punjab & Haryana." />
+
+    <!-- 11. NRI Legal Services & Property Protection -->
+    <meta property="og:practice:nri-legal-services:title" content="NRI Legal Services & Ancestral Property Protection | Advocate Varun Aggarwal" />
+    <meta property="og:practice:nri-legal-services:description" content="Dedicated legal counsel for NRIs in Canada, UK, USA, Australia. Protecting ancestral land from illegal encroachment, GPA disputes, partition suits, and tenant eviction in Punjab & Haryana." />
+    <meta property="og:practice:nri-legal-services:url" content="https://varunlawfirm.com/#nri-legal-services" />
+    <meta name="twitter:practice:nri-legal-services:title" content="NRI Property & Legal Counsel | Advocate Varun Aggarwal" />
+    <meta name="twitter:practice:nri-legal-services:description" content="Ancestral land protection, GPA litigation, partition suits, and tenant eviction for overseas Indians." />
+
+    <!-- 12. Family Law (498A, Protection, Maintenance & Custody) -->
+    <meta property="og:practice:family-law-matrimonial:title" content="Family Law, 498A Defense, DV Protection & Child Custody | Advocate Varun Aggarwal" />
+    <meta property="og:practice:family-law-matrimonial:description" content="Matrimonial litigation before Family Courts & High Court. Section 498A defense & bail, Domestic Violence protection orders, Section 125 maintenance, and child custody disputes." />
+    <meta property="og:practice:family-law-matrimonial:url" content="https://varunlawfirm.com/#family-law-matrimonial" />
+    <meta name="twitter:practice:family-law-matrimonial:title" content="Family Law & Matrimonial Advocate | Advocate Varun Aggarwal" />
+    <meta name="twitter:practice:family-law-matrimonial:description" content="Section 498A defense, Domestic Violence protection, Section 125 maintenance, and child custody advocacy." />
+
+    <!-- Practice Area SEO Metadata Synchronizer (Instant Client-Side & Deep Link Support) -->
+    <script>
+      (function() {
+        var PRACTICE_METAS = {
+          'civil-litigation': {
+            title: 'High Court & Civil Litigation Counsel | Advocate Varun Aggarwal',
+            desc: 'Strategic civil litigation, writ petitions under Art. 226/227, RFA/RSA appeals, property partition, and urgent stay injunctions before Punjab & Haryana High Court.',
+            keywords: 'High Court lawyer Chandigarh, civil litigation advocate Punjab, writ petition lawyer, property dispute advocate High Court',
+            slug: 'civil-litigation'
+          },
+          'debt-recovery': {
+            title: 'DRT & SARFAESI Debt Recovery Defense Advocate | Advocate Varun Aggarwal',
+            desc: 'Challenging Section 13(2), 13(4) and Section 14 bank possession orders, Securitisation Applications under Sec. 17, e-auction stay, and OTS settlements at DRT Chandigarh.',
+            keywords: 'DRT lawyer Chandigarh, SARFAESI defense advocate, Securitisation Application 17, bank auction stay lawyer, DRAT Delhi appeal',
+            slug: 'debt-recovery'
+          },
+          'rera-real-estate': {
+            title: 'RERA Real Estate & Homebuyer Attorney | Advocate Varun Aggarwal',
+            desc: 'Authoritative counsel before HRERA Panchkula/Gurugram and Punjab RERA. Securing delayed possession interest, project refunds under Sec. 18, and recovery warrants.',
+            keywords: 'RERA lawyer Panchkula, HRERA Gurugram attorney, Punjab RERA advocate, builder delay refund lawyer, RERA execution warrant',
+            slug: 'rera-real-estate'
+          },
+          'cat-service-matters': {
+            title: 'Central Administrative Tribunal (CAT) Advocate | Advocate Varun Aggarwal',
+            desc: 'Counsel for central government employees, defence civilians, and postal/railway staff in pay disputes, MACP arrears, charge-sheet quashing, and CAT Chandigarh litigation.',
+            keywords: 'CAT Chandigarh lawyer, central government employee advocate, service matter advocate, MACP arrears lawyer, charge sheet quashing CAT',
+            slug: 'cat-service-matters'
+          },
+          'consumer-disputes': {
+            title: 'Consumer Court & Insurance Dispute Advocate | Advocate Varun Aggarwal',
+            desc: 'Strategic prosecution before State & District Consumer Commissions for insurance claim repudiation, medical negligence, real estate defaults, and commercial deficiency.',
+            keywords: 'Consumer court lawyer Chandigarh, insurance claim repudiation advocate, medical negligence lawyer, State Consumer Commission Punjab Haryana',
+            slug: 'consumer-disputes'
+          },
+          'commercial-contracts': {
+            title: 'Commercial Contract Drafting & Legal Vetting | Advocate Varun Aggarwal',
+            desc: 'Precision drafting of MSAs, NDAs, non-compete covenants, commercial lease agreements, and corporate dispute resolution clauses under Indian contract and arbitration law.',
+            keywords: 'Contract drafting lawyer Chandigarh, corporate legal vetting advocate, commercial lease agreement lawyer, NDA drafting India',
+            slug: 'commercial-contracts'
+          },
+          'regulatory-advisory': {
+            title: 'Regulatory Compliance & Corporate Legal Advisory | Advocate Varun Aggarwal',
+            desc: 'Strategic legal opinions, statutory show-cause notice defense, MSME delayed payment recovery, and municipal clearance advisory across Chandigarh, Punjab, and Haryana.',
+            keywords: 'Legal opinion lawyer Chandigarh, MSME delayed payment advocate, show cause notice reply lawyer, corporate compliance counsel',
+            slug: 'regulatory-advisory'
+          },
+          'negotiable-instruments': {
+            title: 'Cheque Bounce & Sec 138 NI Act Advocate | Advocate Varun Aggarwal',
+            desc: 'Aggressive prosecution & statutory defense in Section 138 cheque dishonour matters, 30-day legal notices, Sec. 143A 20% interim compensation, and compounding.',
+            keywords: 'Cheque bounce lawyer Chandigarh, Section 138 NI Act advocate, 143A interim compensation lawyer, cheque dishonour legal notice',
+            slug: 'negotiable-instruments'
+          },
+          'marriage-protection': {
+            title: 'High Court Marriage Protection & Life Liberty Petitions | Advocate Varun Aggarwal',
+            desc: 'Urgent Article 226 protection petitions before Punjab & Haryana High Court for runaway couples. Securing immediate police protection orders and safe house shelter.',
+            keywords: 'Marriage protection lawyer Chandigarh, runaway couple protection High Court, Article 226 life liberty petition, High Court protection order',
+            slug: 'marriage-protection'
+          },
+          'criminal-defense': {
+            title: 'Criminal Defense, Anticipatory Bail & FIR Quashing | Advocate Varun Aggarwal',
+            desc: 'Vigorous criminal defense before High Court and Sessions Courts. Securing Anticipatory Bail (438 CrPC / 482 BNSS), Regular Bail, FIR Quashing under 482, and trial defense.',
+            keywords: 'Anticipatory bail lawyer Chandigarh, FIR quashing advocate High Court, criminal defense attorney Punjab Haryana, 482 CrPC quashing petition',
+            slug: 'criminal-defense'
+          },
+          'nri-legal-services': {
+            title: 'NRI Legal Services & Ancestral Property Protection | Advocate Varun Aggarwal',
+            desc: 'Dedicated legal counsel for NRIs in Canada, UK, USA, Australia. Protecting ancestral land from illegal encroachment, GPA disputes, partition suits, and tenant eviction in Punjab & Haryana.',
+            keywords: 'NRI lawyer Punjab, NRI property dispute advocate Chandigarh, illegal land grabbing defense NRI, Power of attorney lawyer Punjab Haryana',
+            slug: 'nri-legal-services'
+          },
+          'family-law-matrimonial': {
+            title: 'Family Law, 498A Defense, DV Protection & Child Custody | Advocate Varun Aggarwal',
+            desc: 'Matrimonial litigation before Family Courts & High Court. Section 498A defense & bail, Domestic Violence protection orders, Section 125 maintenance, and child custody disputes.',
+            keywords: 'Family lawyer Chandigarh, 498A defense advocate High Court, Domestic violence lawyer, child custody advocate Punjab Haryana, maintenance 125 CrPC',
+            slug: 'family-law-matrimonial'
+          }
+        };
+
+        function setMetaContent(idOrProperty, isProperty, content) {
+          var el = isProperty 
+            ? document.querySelector('meta[property="' + idOrProperty + '"]') 
+            : (document.getElementById(idOrProperty) || document.querySelector('meta[name="' + idOrProperty + '"]'));
+          if (el) {
+            el.setAttribute('content', content);
+          }
+        }
+
+        window.__syncPracticeAreaMeta = function(practiceKey) {
+          var data = PRACTICE_METAS[practiceKey];
+          var baseUrl = window.location.origin;
+          if (data) {
+            document.title = data.title;
+            setMetaContent('meta-page-desc', false, data.desc);
+            setMetaContent('meta-page-keywords', false, data.keywords);
+            setMetaContent('og:title', true, data.title);
+            setMetaContent('og:description', true, data.desc);
+            setMetaContent('og:url', true, baseUrl + '/#' + data.slug);
+            setMetaContent('twitter:title', false, data.title);
+            setMetaContent('twitter:description', false, data.desc);
+            setMetaContent('twitter:url', false, baseUrl + '/#' + data.slug);
+            var canonical = document.getElementById('meta-canonical-url');
+            if (canonical) {
+              canonical.setAttribute('href', baseUrl + '/#' + data.slug);
+            }
+          } else {
+            // Restore default chamber metadata
+            document.title = 'Varun Law Firm | Advocate Varun Aggarwal, Litigation & Legal Counsel';
+            setMetaContent('meta-page-desc', false, 'Varun Law Firm — Advocate Varun Aggarwal (LL.M). High Court litigation, DRT debt recovery, RERA disputes, Sec 138 cheque bounce, criminal bail, marriage protection, NRI legal services & family law.');
+            setMetaContent('meta-page-keywords', false, 'Varun Law Firm, Advocate Varun Aggarwal, High Court Lawyer Chandigarh, DRT Lawyer Panchkula, RERA Attorney Haryana, Cheque Bounce Sec 138, Marriage Protection High Court, Criminal Bail Lawyer, NRI Property Lawyer Punjab, Family Law 498A Advocate');
+            setMetaContent('og:title', true, 'Varun Law Firm | Advocate Varun Aggarwal, Litigation & Legal Counsel');
+            setMetaContent('og:description', true, 'Strategic legal counsel before Punjab & Haryana High Court, DRT, RERA, Criminal Courts, Marriage Protection, Cheque Dishonour & NRI matters. Schedule a consultation.');
+            setMetaContent('og:url', true, baseUrl);
+            setMetaContent('twitter:title', false, 'Varun Law Firm | Advocate Varun Aggarwal, Litigation & Legal Counsel');
+            setMetaContent('twitter:description', false, 'Strategic legal counsel for High Court, DRT, RERA, Criminal Defense, Cheque Bounce, NRI Legal Services, and Family Law. Book consultations with Advocate Varun Aggarwal.');
+            setMetaContent('twitter:url', false, baseUrl);
+            var canonical = document.getElementById('meta-canonical-url');
+            if (canonical) {
+              canonical.setAttribute('href', baseUrl);
+            }
+          }
+        };
+
+        function inspectUrlForPractice() {
+          var hash = (window.location.hash || '').replace('#', '');
+          var params = new URLSearchParams(window.location.search);
+          var queryPractice = params.get('practice');
+          var pathPractice = (window.location.pathname.match(/\/practice\/([^/]+)/) || [])[1];
+          var target = queryPractice || pathPractice || hash;
+          if (target && PRACTICE_METAS[target]) {
+            window.__syncPracticeAreaMeta(target);
+          }
+        }
+
+        window.addEventListener('hashchange', inspectUrlForPractice);
+        window.addEventListener('popstate', inspectUrlForPractice);
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', inspectUrlForPractice);
+        } else {
+          inspectUrlForPractice();
+        }
+      })();
+    </script>
+
+    <!-- Google Fonts: Luxury Display Serif & Precision Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+    <!-- Schema.org JSON-LD Structured Data for LegalService with All 12 Practice Areas -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LegalService",
+      "name": "Varun Law Firm",
+      "alternateName": "Chambers of Advocate Varun Aggarwal",
+      "image": "https://varunlawfirm.com/assets/aistudio/Gemini_Generated_Image_lq2uhjlq2uhjlq2u_aed156f1.png",
+      "telephone": "8950503055",
+      "email": "varunlawfirm@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Chambers & Legal Advisory Offices, Sector 17 / High Court Complex",
+        "addressLocality": "Chandigarh",
+        "addressRegion": "Chandigarh (U.T.)",
+        "postalCode": "160017",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 30.7333,
+        "longitude": 76.7794
+      },
+      "url": "https://varunlawfirm.com",
+      "priceRange": "$$",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "09:30",
+          "closes": "19:30"
+        }
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Varun Aggarwal",
+        "jobTitle": "Advocate & Legal Consultant",
+        "alumniOf": "Kurukshetra University (LL.M)",
+        "knowsLanguage": ["English", "Hindi", "Punjabi"],
+        "hasCredential": {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Bar Council Membership",
+          "name": "Bar Council of Punjab & Haryana"
+        }
+      },
+      "areaServed": [
+        "Chandigarh",
+        "Punjab",
+        "Haryana",
+        "Delhi",
+        "Punjab and Haryana High Court",
+        "Panchkula",
+        "Mohali"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Specialized Legal Practice Areas & Statutory Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "High Court & Civil Litigation",
+              "serviceType": "Civil Litigation & Constitutional Writs",
+              "url": "https://varunlawfirm.com/#civil-litigation",
+              "description": "Strategic representation in civil suits, writ petitions under Articles 226/227, RFA/RSA appeals, property partition, and urgent interim injunctions before Punjab & Haryana High Court."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Debt Recovery & SARFAESI Defense (DRT/DRAT)",
+              "serviceType": "Banking & Debt Recovery Law",
+              "url": "https://varunlawfirm.com/#debt-recovery",
+              "description": "Challenging Section 13(2), 13(4) and Section 14 bank possession orders, Securitisation Applications (S.A.) under Sec. 17, e-auction stay, and OTS settlements at DRT Chandigarh."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Real Estate & RERA Advocacy",
+              "serviceType": "Real Estate Regulation & Consumer Protection",
+              "url": "https://varunlawfirm.com/#rera-real-estate",
+              "description": "Authoritative counsel before HRERA Panchkula/Gurugram and Punjab RERA. Securing delayed possession interest, project refund under Sec. 18, and recovery warrants."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Central Administrative Tribunal (CAT)",
+              "serviceType": "Administrative & Service Law",
+              "url": "https://varunlawfirm.com/#cat-service-matters",
+              "description": "Dedicated counsel for central government employees, defence civilians, and postal/railway staff in pay disputes, MACP arrears, charge-sheet quashing, and CAT Chandigarh litigation."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Consumer Protection & Deficiencies",
+              "serviceType": "Consumer Dispute Redressal",
+              "url": "https://varunlawfirm.com/#consumer-disputes",
+              "description": "Aggressive prosecution before State & District Consumer Commissions for insurance claim repudiation, medical negligence, real estate defaults, and commercial deficiency."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Contract Drafting & Commercial Vetting",
+              "serviceType": "Commercial & Corporate Contracts",
+              "url": "https://varunlawfirm.com/#commercial-contracts",
+              "description": "Precision drafting of MSAs, NDAs, non-compete covenants, commercial lease agreements, and corporate dispute resolution clauses under Indian contract and arbitration law."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Regulatory Compliance & Legal Advisory",
+              "serviceType": "Corporate Regulatory Compliance",
+              "url": "https://varunlawfirm.com/#regulatory-advisory",
+              "description": "Strategic legal opinions, statutory show-cause notice defense, MSME delayed payment recovery, and municipal clearance advisory across Chandigarh, Punjab, and Haryana."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Negotiable Instruments & Cheque Bounce (Sec. 138)",
+              "serviceType": "Negotiable Instruments & Debt Recovery",
+              "url": "https://varunlawfirm.com/#negotiable-instruments",
+              "description": "Aggressive prosecution & defense in Section 138 cheque bounce cases, statutory 30-day demand notices, Section 143A 20% interim compensation, and appellate compounding."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Marriage Protection & Life Liberty Petitions",
+              "serviceType": "Constitutional Life & Liberty Writs",
+              "url": "https://varunlawfirm.com/#marriage-protection",
+              "description": "Urgent Article 226 protection petitions before Punjab & Haryana High Court for runaway couples. Securing immediate police protection orders and safe house shelter."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Criminal Defense, Bail & FIR Quashing",
+              "serviceType": "Criminal Jurisprudence & Defense",
+              "url": "https://varunlawfirm.com/#criminal-defense",
+              "description": "Vigorous criminal defense before High Court and Sessions Courts. Securing Anticipatory Bail (438 CrPC / 482 BNSS), Regular Bail, FIR Quashing under 482, and trial defense."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "NRI Legal Services & Property Protection",
+              "serviceType": "NRI Property & Heritage Advisory",
+              "url": "https://varunlawfirm.com/#nri-legal-services",
+              "description": "Dedicated legal counsel for NRIs in Canada, UK, USA, Australia. Protecting ancestral land from illegal encroachment, GPA disputes, partition suits, and tenant eviction in Punjab & Haryana."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Family Law (498A, Protection, Maintenance & Custody)",
+              "serviceType": "Matrimonial & Family Law",
+              "url": "https://varunlawfirm.com/#family-law-matrimonial",
+              "description": "Matrimonial litigation before Family Courts & High Court. Section 498A defense & bail, Domestic Violence protection orders, Section 125 maintenance, and child custody disputes."
+            }
+          }
+        ]
+      }
+    }
+    </script>
+
+    <!-- Schema.org ItemList for Rich Search Engine Discovery of Specialized Legal Pages -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Varun Law Firm Specialized Legal Practice Areas",
+      "description": "Index of specialized litigation, tribunal representation, and legal advisory services provided by Advocate Varun Aggarwal.",
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "numberOfItems": 12,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "High Court & Civil Litigation",
+          "url": "https://varunlawfirm.com/#civil-litigation"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Debt Recovery & SARFAESI Defense (DRT/DRAT)",
+          "url": "https://varunlawfirm.com/#debt-recovery"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Real Estate & RERA Advocacy",
+          "url": "https://varunlawfirm.com/#rera-real-estate"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Central Administrative Tribunal (CAT)",
+          "url": "https://varunlawfirm.com/#cat-service-matters"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Consumer Protection & Deficiencies",
+          "url": "https://varunlawfirm.com/#consumer-disputes"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Contract Drafting & Commercial Vetting",
+          "url": "https://varunlawfirm.com/#commercial-contracts"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Regulatory Compliance & Legal Advisory",
+          "url": "https://varunlawfirm.com/#regulatory-advisory"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Negotiable Instruments & Cheque Bounce (Sec. 138)",
+          "url": "https://varunlawfirm.com/#negotiable-instruments"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "Marriage Protection & Life Liberty Petitions",
+          "url": "https://varunlawfirm.com/#marriage-protection"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "Criminal Defense, Bail & FIR Quashing",
+          "url": "https://varunlawfirm.com/#criminal-defense"
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "name": "NRI Legal Services & Property Protection",
+          "url": "https://varunlawfirm.com/#nri-legal-services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "name": "Family Law (498A, Protection, Maintenance & Custody)",
+          "url": "https://varunlawfirm.com/#family-law-matrimonial"
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body class="bg-[#070D1E] text-slate-100 antialiased selection:bg-[#C5A880]/30 selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="consultBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#121e3a"/>
+      <stop offset="50%" stop-color="#091024"/>
+      <stop offset="100%" stop-color="#040813"/>
+    </linearGradient>
+    <linearGradient id="consultGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faebd7"/>
+      <stop offset="50%" stop-color="#c5a880"/>
+      <stop offset="100%" stop-color="#8a693c"/>
+    </linearGradient>
+    <radialGradient id="deskLampGlow" cx="28%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#ffeaad" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#c5a880" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#c5a880" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#consultBg)"/>
+  <!-- Warm glow from banker's lamp -->
+  <circle cx="340" cy="220" r="300" fill="url(#deskLampGlow)"/>
+
+  <!-- City Skyline / Window Grid Backdrop -->
+  <g opacity="0.15" stroke="url(#consultGold)" stroke-width="1.5">
+    <rect x="60" y="50" width="1080" height="240" fill="none"/>
+    <line x1="330" y1="50" x2="330" y2="290"/>
+    <line x1="600" y1="50" x2="600" y2="290"/>
+    <line x1="870" y1="50" x2="870" y2="290"/>
+    <line x1="60" y1="170" x2="1140" y2="170"/>
+  </g>
+
+  <!-- Brass Banker's Lamp (Left) -->
+  <g transform="translate(180, 160)">
+    <path d="M 0 180 L 60 180" stroke="url(#consultGold)" stroke-width="6"/>
+    <path d="M 30 180 C 30 100 80 50 140 40" fill="none" stroke="url(#consultGold)" stroke-width="5"/>
+    <ellipse cx="140" cy="40" rx="36" ry="16" fill="#1b4d3e" stroke="url(#consultGold)" stroke-width="3"/>
+  </g>
+
+  <!-- Polished Mahogany Conference Desk -->
+  <path d="M 80 430 L 1120 430 L 1200 675 L 0 675 Z" fill="#1a120c" stroke="url(#consultGold)" stroke-width="2"/>
+  <line x1="80" y1="430" x2="1120" y2="430" stroke="url(#consultGold)" stroke-width="3"/>
+
+  <!-- Advocate Varun Aggarwal (Right of center, facing client) -->
+  <!-- Waistcoat & White Shirt -->
+  <path d="M 680 675 C 700 500 760 440 820 440 C 880 440 940 500 960 675 Z" fill="#0f1933" stroke="url(#consultGold)" stroke-width="1" stroke-opacity="0.4"/>
+  <polygon points="820,440 795,530 820,560 845,530" fill="#ffffff"/>
+  <ellipse cx="820" cy="360" rx="50" ry="62" fill="#f0d5b6"/>
+  <!-- Hair & Glasses -->
+  <path d="M 770 350 C 770 290 790 275 820 275 C 850 275 870 290 870 350 C 860 330 845 325 820 325 C 795 325 780 330 770 350 Z" fill="#181818"/>
+  <rect x="785" y="345" width="30" height="18" rx="2" fill="rgba(255,255,255,0.3)" stroke="url(#consultGold)" stroke-width="2"/>
+  <rect x="825" y="345" width="30" height="18" rx="2" fill="rgba(255,255,255,0.3)" stroke="url(#consultGold)" stroke-width="2"/>
+  <line x1="815" y1="354" x2="825" y2="354" stroke="url(#consultGold)" stroke-width="2"/>
+  <!-- Trimmed Beard -->
+  <path d="M 788 380 C 798 420 842 420 852 380 C 842 390 830 395 820 395 C 810 395 798 390 788 380 Z" fill="#221e1a" opacity="0.9"/>
+
+  <!-- Client Seated Silhouette (Left side, listening intently) -->
+  <path d="M 220 675 C 240 540 280 490 340 490 C 370 490 390 510 400 560" fill="#1b2438" opacity="0.85"/>
+  <ellipse cx="340" cy="420" rx="42" ry="50" fill="#182030"/>
+
+  <!-- Case Files & Legal Documents on Conference Table -->
+  <g transform="translate(460, 470)">
+    <!-- Brief dossier folder -->
+    <rect x="0" y="0" width="220" height="130" rx="6" fill="#eed9b7" stroke="#8a693c" stroke-width="1.5"/>
+    <rect x="15" y="15" width="190" height="100" fill="#fefdfb"/>
+    <text x="110" y="45" text-anchor="middle" font-family="Georgia, serif" font-size="12" font-weight="bold" fill="#2a1b14">CONFIDENTIAL CLIENT BRIEF</text>
+    <line x1="35" y1="65" x2="185" y2="65" stroke="#94a3b8" stroke-width="1.5"/>
+    <line x1="35" y1="80" x2="165" y2="80" stroke="#94a3b8" stroke-width="1.5"/>
+    <line x1="35" y1="95" x2="175" y2="95" stroke="#94a3b8" stroke-width="1.5"/>
+  </g>
+
+  <!-- Laptop with Law Portal Interface -->
+  <g transform="translate(320, 480)">
+    <polygon points="40,20 120,20 140,80 20,80" fill="#2d3748" stroke="url(#consultGold)" stroke-width="1"/>
+    <polygon points="20,80 140,80 150,90 10,90" fill="#4a5568"/>
+    <rect x="45" y="25" width="70" height="45" fill="#0f172a"/>
+    <line x1="50" y1="35" x2="100" y2="35" stroke="#38bdf8" stroke-width="1.5"/>
+    <line x1="50" y1="45" x2="90" y2="45" stroke="#38bdf8" stroke-width="1.5"/>
+  </g>
+
+  <!-- Bottom Title Banner -->
+  <g transform="translate(600, 630)">
+    <rect x="-260" y="-22" width="520" height="44" rx="8" fill="#060c1d" stroke="url(#consultGold)" stroke-width="1.5"/>
+    <text x="0" y="2" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-weight="bold" fill="#ffffff" letter-spacing="1">STRATEGIC CLIENT CASE CONSULTATION</text>
+    <text x="0" y="16" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="600" fill="#c5a880" letter-spacing="1.5">CHANDIGARH EXECUTIVE CHAMBERS · CONFIDENTIAL</text>
+  </g>
+</svg>

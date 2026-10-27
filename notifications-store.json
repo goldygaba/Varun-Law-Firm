@@ -1,0 +1,208 @@
+[
+  {
+    "id": "log-1792442819868-wa-client",
+    "timestamp": "2026-10-19T20:46:59.846Z",
+    "appointmentRef": "VLF-2026-1368",
+    "type": "client_whatsapp",
+    "recipient": "9812345678",
+    "status": "sent",
+    "summary": "Client WhatsApp confirmation receipt generated for 9812345678"
+  },
+  {
+    "id": "log-1792442819867-wa-admin",
+    "timestamp": "2026-10-19T20:46:59.846Z",
+    "appointmentRef": "VLF-2026-1368",
+    "type": "admin_whatsapp",
+    "recipient": "8950503055",
+    "status": "sent",
+    "summary": "Admin WhatsApp alert generated for 8950503055"
+  },
+  {
+    "id": "log-1792442819867-client",
+    "timestamp": "2026-10-19T20:46:59.846Z",
+    "appointmentRef": "VLF-2026-1368",
+    "type": "client_email",
+    "recipient": "rajiv.test@example.com",
+    "status": "simulated",
+    "subject": "Booking Confirmed: Legal Consultation with Advocate Varun Aggarwal (VLF-2026-1368)",
+    "summary": "Confirmation docket & calendar invite for client Rajiv Mehra"
+  },
+  {
+    "id": "log-1792442819865-admin",
+    "timestamp": "2026-10-19T20:46:59.846Z",
+    "appointmentRef": "VLF-2026-1368",
+    "type": "admin_email",
+    "recipient": "varunlawfirm@gmail.com",
+    "status": "simulated",
+    "subject": "🚨 [NEW BOOKING] VLF-2026-1368 - Rajiv Mehra (2026-10-30 · 04:00 PM - 04:45 PM)",
+    "summary": "Booking alert for Rajiv Mehra (High Court & Civil Litigation)"
+  },
+  {
+    "id": "log-1792359741586-wa-client",
+    "timestamp": "2026-10-18T21:42:18.152Z",
+    "appointmentRef": "VLF-2026-4825",
+    "type": "client_whatsapp",
+    "recipient": "9876543210",
+    "status": "sent",
+    "summary": "Client WhatsApp confirmation receipt generated for 9876543210"
+  },
+  {
+    "id": "log-1792359741586-wa-admin",
+    "timestamp": "2026-10-18T21:42:18.152Z",
+    "appointmentRef": "VLF-2026-4825",
+    "type": "admin_whatsapp",
+    "recipient": "8950503055",
+    "status": "sent",
+    "summary": "Admin WhatsApp alert generated for 8950503055"
+  },
+  {
+    "id": "log-1792359741585-client-err",
+    "timestamp": "2026-10-18T21:42:18.152Z",
+    "appointmentRef": "VLF-2026-4825",
+    "type": "client_email",
+    "recipient": "suresh.sharma.test@gmail.com",
+    "status": "simulated",
+    "summary": "Client email: Google 535 Bad Credentials: 16-character App Password required"
+  },
+  {
+    "id": "log-1792359739849-admin-err",
+    "timestamp": "2026-10-18T21:42:18.152Z",
+    "appointmentRef": "VLF-2026-4825",
+    "type": "admin_email",
+    "recipient": "varunlawfirm@gmail.com",
+    "status": "simulated",
+    "summary": "Admin email alert: Google 535 Bad Credentials: 16-character App Password required"
+  },
+  {
+    "id": "log-1792359726267-cloud-test",
+    "timestamp": "2026-10-18T21:42:06.267Z",
+    "appointmentRef": "TEST-CLOUD-VERIFICATION",
+    "type": "client_email",
+    "recipient": "client.test@example.com",
+    "status": "sent",
+    "subject": "✅ Verification Test: Varun Law Firm Chamber Gateway (Live Preview)",
+    "summary": "Cloud verification test dispatched to client.test@example.com"
+  },
+  {
+    "id": "log-1792355187194-wa-client",
+    "timestamp": "2026-10-18T20:26:23.637Z",
+    "appointmentRef": "VLF-2026-9709",
+    "type": "client_whatsapp",
+    "recipient": "8950503055",
+    "status": "sent",
+    "summary": "Client WhatsApp confirmation receipt generated for 8950503055"
+  },
+  {
+    "id": "log-1792355187194-wa-admin",
+    "timestamp": "2026-10-18T20:26:23.637Z",
+    "appointmentRef": "VLF-2026-9709",
+    "type": "admin_whatsapp",
+    "recipient": "8950503055",
+    "status": "sent",
+    "summary": "Admin WhatsApp alert generated for 8950503055"
+  },
+  {
+    "id": "log-1792355187193-client-err",
+    "timestamp": "2026-10-18T20:26:23.637Z",
+    "appointmentRef": "VLF-2026-9709",
+    "type": "client_email",
+    "recipient": "goldygaba123@gmail.com",
+    "status": "simulated",
+    "summary": "Client email: Google 535 Bad Credentials: 16-character App Password required"
+  },
+  {
+    "id": "log-1792355185417-admin-err",
+    "timestamp": "2026-10-18T20:26:23.637Z",
+    "appointmentRef": "VLF-2026-9709",
+    "type": "admin_email",
+    "recipient": "varunlawfirm@gmail.com",
+    "status": "simulated",
+    "summary": "Admin email alert: Google 535 Bad Credentials: 16-character App Password required"
+  },
+  {
+    "id": "log-1792355168648-cloud-test",
+    "timestamp": "2026-10-18T20:26:08.648Z",
+    "appointmentRef": "TEST-CLOUD-VERIFICATION",
+    "type": "client_email",
+    "recipient": "goldygaba123@gmail.com",
+    "status": "sent",
+    "subject": "✅ Verification Test: Varun Law Firm Chamber Gateway (Live Preview)",
+    "summary": "Cloud verification test dispatched to goldygaba123@gmail.com"
+  },
+  {
+    "id": "log-1792352507143-wa-client",
+    "timestamp": "2026-10-18T19:41:47.132Z",
+    "appointmentRef": "VLF-2026-8535",
+    "type": "client_whatsapp",
+    "recipient": "8950503055",
+    "status": "sent",
+    "summary": "Client WhatsApp confirmation receipt generated for 8950503055"
+  },
+  {
+    "id": "log-1792352507143-wa-admin",
+    "timestamp": "2026-10-18T19:41:47.132Z",
+    "appointmentRef": "VLF-2026-8535",
+    "type": "admin_whatsapp",
+    "recipient": "8950503055",
+    "status": "sent",
+    "summary": "Admin WhatsApp alert generated for 8950503055"
+  },
+  {
+    "id": "log-1792352507142-client",
+    "timestamp": "2026-10-18T19:41:47.132Z",
+    "appointmentRef": "VLF-2026-8535",
+    "type": "client_email",
+    "recipient": "goldygaba123@gmail.com",
+    "status": "simulated",
+    "subject": "Booking Confirmed: Legal Consultation with Advocate Varun Aggarwal (VLF-2026-8535)",
+    "summary": "Confirmation docket & calendar invite for client Goldy Gaba"
+  },
+  {
+    "id": "log-1792352507141-admin",
+    "timestamp": "2026-10-18T19:41:47.132Z",
+    "appointmentRef": "VLF-2026-8535",
+    "type": "admin_email",
+    "recipient": "varunlawfirm@gmail.com",
+    "status": "simulated",
+    "subject": "🚨 [NEW BOOKING] VLF-2026-8535 - Goldy Gaba (2026-10-25 · 02:30 PM - 03:15 PM)",
+    "summary": "Booking alert for Goldy Gaba (High Court & Civil Litigation)"
+  },
+  {
+    "id": "log-1792351427208-wa-client",
+    "timestamp": "2026-10-18T19:23:47.200Z",
+    "appointmentRef": "VLF-2026-5139",
+    "type": "client_whatsapp",
+    "recipient": "9896670883",
+    "status": "sent",
+    "summary": "Client WhatsApp confirmation receipt generated for 9896670883"
+  },
+  {
+    "id": "log-1792351427208-wa-admin",
+    "timestamp": "2026-10-18T19:23:47.200Z",
+    "appointmentRef": "VLF-2026-5139",
+    "type": "admin_whatsapp",
+    "recipient": "8950503055",
+    "status": "sent",
+    "summary": "Admin WhatsApp alert generated for 8950503055"
+  },
+  {
+    "id": "log-1792351427207-client",
+    "timestamp": "2026-10-18T19:23:47.200Z",
+    "appointmentRef": "VLF-2026-5139",
+    "type": "client_email",
+    "recipient": "goldygaba123@gmail.com",
+    "status": "sent",
+    "subject": "Booking Confirmed: Legal Consultation with Advocate Varun Aggarwal (VLF-2026-5139)",
+    "summary": "Confirmation docket sent to client goldy"
+  },
+  {
+    "id": "log-1792351427206-admin",
+    "timestamp": "2026-10-18T19:23:47.200Z",
+    "appointmentRef": "VLF-2026-5139",
+    "type": "admin_email",
+    "recipient": "varunlawfirm@gmail.com",
+    "status": "sent",
+    "subject": "🚨 [NEW BOOKING] VLF-2026-5139 - goldy (2026-10-20 · 10:00 AM - 10:45 AM)",
+    "summary": "Booking alert for goldy (High Court & Civil Litigation)"
+  }
+]

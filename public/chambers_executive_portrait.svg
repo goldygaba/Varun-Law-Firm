@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e1a38"/>
+      <stop offset="50%" stop-color="#081024"/>
+      <stop offset="100%" stop-color="#040814"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5e5c9"/>
+      <stop offset="50%" stop-color="#c5a880"/>
+      <stop offset="100%" stop-color="#8c6d40"/>
+    </linearGradient>
+    <linearGradient id="suitGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#16223d"/>
+      <stop offset="100%" stop-color="#0a1020"/>
+    </linearGradient>
+    <radialGradient id="auraGlow" cx="50%" cy="35%" r="45%">
+      <stop offset="0%" stop-color="#c5a880" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#c5a880" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="800" height="1000" fill="url(#bgGrad)"/>
+  <circle cx="400" cy="350" r="350" fill="url(#auraGlow)"/>
+
+  <!-- Ornate Chamber Border -->
+  <rect x="24" y="24" width="752" height="952" rx="16" fill="none" stroke="#c5a880" stroke-opacity="0.3" stroke-width="2"/>
+  <rect x="36" y="36" width="728" height="928" rx="12" fill="none" stroke="#c5a880" stroke-opacity="0.15" stroke-width="1" stroke-dasharray="8 6"/>
+
+  <!-- Corner Flourishes -->
+  <path d="M 36 60 L 60 60 L 60 36" fill="none" stroke="#c5a880" stroke-width="2"/>
+  <path d="M 764 60 L 740 60 L 740 36" fill="none" stroke="#c5a880" stroke-width="2"/>
+  <path d="M 36 940 L 60 940 L 60 964" fill="none" stroke="#c5a880" stroke-width="2"/>
+  <path d="M 764 940 L 740 940 L 740 964" fill="none" stroke="#c5a880" stroke-width="2"/>
+
+  <!-- Chamber Library Backdrop (Bookshelves silhouette) -->
+  <g opacity="0.12" stroke="#c5a880" stroke-width="1.5">
+    <line x1="80" y1="200" x2="720" y2="200"/>
+    <line x1="80" y1="280" x2="720" y2="280"/>
+    <line x1="80" y1="360" x2="720" y2="360"/>
+    <!-- Books vertical bars -->
+    <rect x="100" y="210" width="18" height="70" fill="#c5a880"/>
+    <rect x="122" y="215" width="22" height="65" fill="#c5a880"/>
+    <rect x="148" y="208" width="16" height="72" fill="#c5a880"/>
+    <rect x="168" y="220" width="24" height="60" fill="#c5a880"/>
+    <rect x="610" y="212" width="20" height="68" fill="#c5a880"/>
+    <rect x="634" y="206" width="24" height="74" fill="#c5a880"/>
+    <rect x="662" y="215" width="18" height="65" fill="#c5a880"/>
+  </g>
+
+  <!-- Advocate Silhouette & Attire -->
+  <!-- Shoulders & Tailored Black Waistcoat -->
+  <path d="M 220 820 C 240 650 310 540 400 540 C 490 540 560 650 580 820 Z" fill="url(#suitGrad)" stroke="#c5a880" stroke-width="1" stroke-opacity="0.4"/>
+  
+  <!-- Crisp White Shirt V-Neck & Collar -->
+  <polygon points="400,540 370,640 400,680 430,640" fill="#ffffff"/>
+  <polygon points="360,550 375,610 395,570" fill="#e8edf5"/>
+  <polygon points="440,550 425,610 405,570" fill="#e8edf5"/>
+
+  <!-- Advocate Head & Face Shape -->
+  <ellipse cx="400" cy="380" rx="90" ry="115" fill="#f0d5b6"/>
+  <!-- Hair (short wavy top, neat trim) -->
+  <path d="M 310 360 C 310 270 340 240 400 240 C 460 240 490 270 490 360 C 470 330 440 320 400 320 C 360 320 330 330 310 360 Z" fill="#181818"/>
+  
+  <!-- Modern Rimless Rectangular Glasses -->
+  <rect x="330" y="360" width="55" height="32" rx="4" fill="rgba(255,255,255,0.25)" stroke="#c5a880" stroke-width="2.5"/>
+  <rect x="415" y="360" width="55" height="32" rx="4" fill="rgba(255,255,255,0.25)" stroke="#c5a880" stroke-width="2.5"/>
+  <line x1="385" y1="375" x2="415" y2="375" stroke="#c5a880" stroke-width="3"/>
+  <line x1="315" y1="372" x2="330" y2="372" stroke="#c5a880" stroke-width="2"/>
+  <line x1="470" y1="372" x2="485" y2="372" stroke="#c5a880" stroke-width="2"/>
+
+  <!-- Eyes behind glasses -->
+  <ellipse cx="357" cy="376" rx="6" ry="4" fill="#1c2436"/>
+  <ellipse cx="443" cy="376" rx="6" ry="4" fill="#1c2436"/>
+
+  <!-- Trimmed Professional Beard & Mustache -->
+  <path d="M 335 420 C 350 490 450 490 465 420 C 450 435 425 440 400 440 C 375 440 350 435 335 420 Z" fill="#221e1a" opacity="0.9"/>
+  <!-- Reassuring smile -->
+  <path d="M 380 432 Q 400 442 420 432" stroke="#1f1812" stroke-width="2" fill="none"/>
+
+  <!-- Waistcoat Buttons -->
+  <circle cx="400" cy="710" r="4" fill="#c5a880"/>
+  <circle cx="400" cy="750" r="4" fill="#c5a880"/>
+  <circle cx="400" cy="790" r="4" fill="#c5a880"/>
+
+  <!-- Desk & Legal Documents Foreground -->
+  <path d="M 60 880 L 740 880 L 800 1000 L 0 1000 Z" fill="#111c38" stroke="#c5a880" stroke-opacity="0.3" stroke-width="2"/>
+  
+  <!-- Constitution of India / Precedents Brief Dossier on desk -->
+  <polygon points="120,900 280,890 300,960 140,970" fill="#fdfbf7" stroke="#c5a880" stroke-width="1.5"/>
+  <line x1="145" y1="915" x2="265" y2="905" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="150" y1="930" x2="270" y2="920" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="155" y1="945" x2="250" y2="938" stroke="#94a3b8" stroke-width="2"/>
+
+  <!-- Emblem Scales of Justice Plaque on Desk -->
+  <g transform="translate(620, 890) scale(0.65)">
+    <circle cx="40" cy="40" r="38" fill="#0b1328" stroke="url(#goldGrad)" stroke-width="2"/>
+    <line x1="40" y1="15" x2="40" y2="65" stroke="url(#goldGrad)" stroke-width="3"/>
+    <line x1="18" y1="28" x2="62" y2="28" stroke="url(#goldGrad)" stroke-width="2.5"/>
+    <polygon points="18,28 10,48 26,48" fill="none" stroke="url(#goldGrad)" stroke-width="1.5"/>
+    <polygon points="62,28 54,48 70,48" fill="none" stroke="url(#goldGrad)" stroke-width="1.5"/>
+  </g>
+
+  <!-- Typography / Plaque Badge -->
+  <g transform="translate(400, 840)">
+    <rect x="-190" y="-22" width="380" height="44" rx="8" fill="#070e22" stroke="url(#goldGrad)" stroke-width="1.5"/>
+    <text x="0" y="4" text-anchor="middle" font-family="Georgia, serif" font-size="16" font-weight="bold" fill="#ffffff" letter-spacing="1">ADVOCATE VARUN AGGARWAL</text>
+    <text x="0" y="16" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="600" fill="#c5a880" letter-spacing="2">MASTER OF LAWS (LL.M) · CHANDIGARH</text>
+  </g>
+</svg>

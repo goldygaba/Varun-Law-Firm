@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-navy-950: #050a18;
+    --color-navy-900: #0a1128;
+    --color-navy-800: #101c3d;
+    --color-navy-700: #1a2a56;
+    --color-gold-500: #c5a880;
+    --color-gold-400: #d8be98;
+    --color-gold-300: #ebd8ba;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    background-color: #070d1e;
+    color: #e2e8f0;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #070d1e;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c5a880;
+}
+
+/* 3D card tilt & perspective utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.perspective-1200 {
+  perspective: 1200px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #f5e6cc 0%, #c5a880 50%, #dfc29c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border-glow {
+  box-shadow: 0 0 25px -5px rgba(197, 168, 128, 0.15);
+}
+
+.glass-panel {
+  background: rgba(13, 23, 50, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(197, 168, 128, 0.14);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(16, 30, 68, 0.85);
+  border-color: rgba(197, 168, 128, 0.35);
+  box-shadow: 0 12px 35px -10px rgba(0, 0, 0, 0.5), 0 0 20px -3px rgba(197, 168, 128, 0.2);
+}
