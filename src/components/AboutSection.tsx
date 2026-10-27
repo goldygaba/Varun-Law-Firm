@@ -116,8 +116,8 @@ export default function AboutSection() {
         {/* 2-Column Layout: Visual Profile Card + Structured Biography */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
-          {/* Left Column: Interactive 3D Visual Dossier Card */}
-          <div className="lg:col-span-5">
+          {/* Left Column: Interactive 3D Visual Dossier Card & Expanded Video Showcase */}
+          <div className="lg:col-span-6">
             <div className="rounded-2xl bg-gradient-to-b from-[#0f1d40] to-[#070d1e] border border-[#c5a880]/30 p-6 sm:p-8 shadow-2xl relative overflow-hidden group">
               
               {/* Subtle gold accent lighting */}
@@ -154,11 +154,11 @@ export default function AboutSection() {
                   "Justice, Guidance and Practical Solutions"
                 </p>
 
-                {/* Introduction Video with Scroll Auto-Play / Pause and Clean Chrome */}
+                {/* Introduction Video with Clear Display, Expanded Screen & Scroll Auto-Play */}
                 <div ref={videoContainerRef} className="w-full mb-5">
-                  <div className="flex items-center justify-between mb-2 px-1">
-                    <span className="text-[11px] uppercase tracking-wider text-[#d8be98] font-semibold flex items-center gap-1.5">
-                      <Play className="w-3 h-3 text-[#c5a880] fill-[#c5a880]" />
+                  <div className="flex items-center justify-between mb-2.5 px-1">
+                    <span className="text-xs uppercase tracking-wider text-[#d8be98] font-semibold flex items-center gap-1.5">
+                      <Play className="w-3.5 h-3.5 text-[#c5a880] fill-[#c5a880]" />
                       Introduction Video
                     </span>
                     <span className="text-[10px] font-mono text-slate-400 flex items-center gap-1.5">
@@ -175,36 +175,24 @@ export default function AboutSection() {
 
                   <div 
                     onClick={() => handleTogglePlay()}
-                    className="relative aspect-video w-full rounded-xl overflow-hidden border border-[#c5a880]/30 shadow-2xl bg-black group/video cursor-pointer select-none"
+                    className="relative aspect-video w-full rounded-xl overflow-hidden border border-[#c5a880]/40 shadow-2xl bg-black group/video cursor-pointer select-none ring-1 ring-white/10"
                     title={isPlaying ? "Click to Pause" : "Click to Play"}
                   >
-                    {/* YouTube IFrame:
-                        - controls=0: eliminates default YouTube controls
-                        - modestbranding=1 & showinfo=0: removes branding & title
-                        - rel=0: no outside related videos
-                        - iv_load_policy=3: no annotations
-                        - scale-[1.18] & -mt-[54px] h-[calc(100%+108px)]: crops outer 9% edges to eliminate corner AI watermarks
-                    */}
+                    {/* YouTube IFrame - Clean Full-Frame Display without dark overlays */}
                     <iframe
                       ref={videoIframeRef}
                       src="https://www.youtube.com/embed/LQMkvij6Smw?enablejsapi=1&autoplay=0&mute=0&controls=0&modestbranding=1&rel=0&iv_load_policy=3&showinfo=0&disablekb=1&fs=0&playsinline=1&loop=1&playlist=LQMkvij6Smw"
                       title="Advocate Varun Aggarwal Introduction Video"
-                      className="w-full h-[calc(100%+108px)] -mt-[54px] border-0 pointer-events-none scale-[1.18] origin-center"
+                      className="w-full h-[calc(100%+24px)] -mt-[12px] border-0 pointer-events-none scale-[1.03] origin-center"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     />
 
-                    {/* Corner Shields to eliminate any residual corner AI watermarks */}
-                    <div className="absolute top-0 right-0 z-10 w-44 h-24 bg-gradient-to-bl from-black via-black/70 to-transparent pointer-events-none" />
-                    <div className="absolute top-0 left-0 z-10 w-44 h-24 bg-gradient-to-br from-black via-black/70 to-transparent pointer-events-none" />
-                    <div className="absolute bottom-0 right-0 z-10 w-56 h-28 bg-gradient-to-tl from-black via-black/85 to-transparent pointer-events-none" />
-                    <div className="absolute bottom-0 left-0 z-10 w-48 h-24 bg-gradient-to-tr from-black via-black/75 to-transparent pointer-events-none" />
-
-                    {/* Transparent Click Overlay to handle Play/Pause without external YouTube redirection */}
+                    {/* Transparent Click Overlay for seamless Play/Pause toggle */}
                     <div className="absolute inset-0 z-10" />
 
-                    {/* Big Center Play Icon when paused */}
+                    {/* Center Play Icon when paused */}
                     {!isPlaying && (
-                      <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/40 backdrop-blur-[2px] transition-all">
+                      <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/30 backdrop-blur-[1px] transition-all">
                         <div className="w-14 h-14 rounded-full bg-[#c5a880] text-[#070d1e] flex items-center justify-center shadow-xl shadow-black/60 group-hover/video:scale-110 transition-transform">
                           <Play className="w-6 h-6 fill-current ml-1" />
                         </div>
@@ -212,12 +200,12 @@ export default function AboutSection() {
                     )}
 
                     {/* Bottom Custom Control Bar */}
-                    <div className="absolute bottom-0 left-0 right-0 z-20 px-3 py-2.5 bg-gradient-to-t from-black via-black/90 to-transparent flex items-center justify-between pointer-events-auto">
+                    <div className="absolute bottom-0 left-0 right-0 z-20 px-3 py-2 bg-gradient-to-t from-black/85 via-black/50 to-transparent flex items-center justify-between pointer-events-auto">
                       {/* Play/Pause Button */}
                       <button
                         type="button"
                         onClick={handleTogglePlay}
-                        className="px-2.5 py-1 rounded-md bg-black/60 hover:bg-[#c5a880] text-slate-200 hover:text-[#070d1e] border border-white/10 hover:border-[#c5a880] text-xs font-medium flex items-center gap-1.5 transition-colors"
+                        className="px-2.5 py-1 rounded-md bg-black/60 hover:bg-[#c5a880] text-slate-200 hover:text-[#070d1e] border border-white/15 hover:border-[#c5a880] text-xs font-medium flex items-center gap-1.5 transition-colors"
                       >
                         {isPlaying ? (
                           <>
@@ -236,7 +224,7 @@ export default function AboutSection() {
                       <button
                         type="button"
                         onClick={handleToggleMute}
-                        className="px-2.5 py-1 rounded-md bg-black/60 hover:bg-white/20 text-slate-200 hover:text-white border border-white/10 text-xs font-medium flex items-center gap-1.5 transition-colors"
+                        className="px-2.5 py-1 rounded-md bg-black/60 hover:bg-white/20 text-slate-200 hover:text-white border border-white/15 text-xs font-medium flex items-center gap-1.5 transition-colors"
                       >
                         {isMuted ? (
                           <>
@@ -289,7 +277,7 @@ export default function AboutSection() {
           </div>
 
           {/* Right Column: Tabbed Detailed Biography & Experience */}
-          <div className="lg:col-span-7 flex flex-col">
+          <div className="lg:col-span-6 flex flex-col">
             
             {/* Interactive Tab Navigation (Segmented Functional Buttons) */}
             <div className="flex flex-wrap items-center gap-2 p-1.5 bg-[#0a1128] border border-[#c5a880]/20 rounded-xl mb-8">
