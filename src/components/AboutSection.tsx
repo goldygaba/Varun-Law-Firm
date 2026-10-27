@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { Award, GraduationCap, Building2, Languages, BookOpen, CheckCircle, Briefcase, FileText, Scale, Play, Pause, Volume2, VolumeX } from 'lucide-react';
+import { Award, GraduationCap, Building2, Languages, BookOpen, CheckCircle, Briefcase, FileText, Scale, Play, Pause, Volume2, VolumeX, Maximize2, Minimize2 } from 'lucide-react';
 import { LAWYER_PROFILE } from '../data/legalData';
 
 export default function AboutSection() {
@@ -82,6 +82,32 @@ export default function AboutSection() {
     }
   };
 
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(Boolean(document.fullscreenElement));
+    };
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => {
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    };
+  }, []);
+
+  const handleToggleFullscreen = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (!document.fullscreenElement) {
+      const container = videoContainerRef.current;
+      if (container?.requestFullscreen) {
+        container.requestFullscreen().catch(() => {});
+      }
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen().catch(() => {});
+      }
+    }
+  };
+
   const handleToggleMute = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (isMuted) {
@@ -99,7 +125,7 @@ export default function AboutSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl mb-12 sm:mb-16">
           <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-[#d8be98] font-semibold mb-3">
             <span>Advocate Profile</span>
             <span aria-hidden="true" className="text-slate-600">·</span>
@@ -113,21 +139,21 @@ export default function AboutSection() {
           </p>
         </div>
 
-        {/* 2-Column Layout: Visual Profile Card + Structured Biography */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        {/* 2-Column Layout: Visual Profile Card + Structured Biography with optimized gap */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 lg:gap-8 items-start">
           
           {/* Left Column: Interactive 3D Visual Dossier Card & Expanded Video Showcase */}
-          <div className="lg:col-span-6">
-            <div className="rounded-2xl bg-gradient-to-b from-[#0f1d40] to-[#070d1e] border border-[#c5a880]/30 p-6 sm:p-8 shadow-2xl relative overflow-hidden group">
+          <div className="lg:col-span-6 w-full">
+            <div className="w-full rounded-2xl bg-gradient-to-b from-[#0f1d40] to-[#070d1e] border border-[#c5a880]/30 p-3 sm:p-5 lg:p-7 shadow-2xl relative overflow-hidden group">
               
               {/* Subtle gold accent lighting */}
               <div className="absolute top-0 right-0 w-48 h-48 bg-[#c5a880]/10 blur-3xl pointer-events-none" />
 
               {/* Advocate Portrait Visual Showcase & Intro Video */}
-              <div className="relative rounded-xl overflow-hidden mb-6 bg-[#0a1128] border border-[#c5a880]/20 flex flex-col items-center p-5 sm:p-6 text-center">
+              <div className="w-full relative rounded-xl overflow-hidden mb-3 sm:mb-4 bg-[#0a1128] border border-[#c5a880]/20 flex flex-col items-center p-2.5 sm:p-4 text-center">
                 {/* Advocate Portrait Image Showcase */}
                 <div className="relative mb-3 group/img">
-                  <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl border-2 border-[#c5a880] overflow-hidden shadow-2xl relative bg-[#0e1a38]">
+                  <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl border-2 border-[#c5a880] overflow-hidden shadow-2xl relative bg-[#0e1a38]">
                     <img 
                       src="/assets/aistudio/Gemini_Generated_Image_lq2uhjlq2uhjlq2u_aed156f1.png"
                       alt="Advocate Varun Aggarwal (LL.M) Executive Portrait"
@@ -150,13 +176,13 @@ export default function AboutSection() {
                   Advocate & Legal Consultant
                 </p>
 
-                <p className="text-xs text-slate-300 italic mb-4 max-w-xs font-serif">
+                <p className="text-xs text-slate-300 italic mb-3.5 max-w-xs font-serif">
                   "Justice, Guidance and Practical Solutions"
                 </p>
 
                 {/* Introduction Video with Clear Display, Expanded Screen & Scroll Auto-Play */}
-                <div ref={videoContainerRef} className="w-full mb-5">
-                  <div className="flex items-center justify-between mb-2.5 px-1">
+                <div ref={videoContainerRef} className="w-full mb-4">
+                  <div className="flex items-center justify-between mb-2 px-1">
                     <span className="text-xs uppercase tracking-wider text-[#d8be98] font-semibold flex items-center gap-1.5">
                       <Play className="w-3.5 h-3.5 text-[#c5a880] fill-[#c5a880]" />
                       Introduction Video
@@ -175,16 +201,16 @@ export default function AboutSection() {
 
                   <div 
                     onClick={() => handleTogglePlay()}
-                    className="relative aspect-video w-full rounded-xl overflow-hidden border border-[#c5a880]/40 shadow-2xl bg-black group/video cursor-pointer select-none ring-1 ring-white/10"
+                    className="relative aspect-video w-full min-h-[210px] xs:min-h-[240px] sm:min-h-[280px] md:min-h-[320px] rounded-xl overflow-hidden border border-[#c5a880]/40 shadow-2xl bg-black group/video cursor-pointer select-none ring-1 ring-white/10"
                     title={isPlaying ? "Click to Pause" : "Click to Play"}
                   >
                     {/* YouTube IFrame - Clean Full-Frame Display without dark overlays */}
                     <iframe
                       ref={videoIframeRef}
-                      src="https://www.youtube.com/embed/LQMkvij6Smw?enablejsapi=1&autoplay=0&mute=0&controls=0&modestbranding=1&rel=0&iv_load_policy=3&showinfo=0&disablekb=1&fs=0&playsinline=1&loop=1&playlist=LQMkvij6Smw"
+                      src="https://www.youtube.com/embed/LQMkvij6Smw?enablejsapi=1&autoplay=0&mute=0&controls=0&modestbranding=1&rel=0&iv_load_policy=3&showinfo=0&disablekb=1&fs=1&playsinline=1&loop=1&playlist=LQMkvij6Smw"
                       title="Advocate Varun Aggarwal Introduction Video"
                       className="w-full h-[calc(100%+24px)] -mt-[12px] border-0 pointer-events-none scale-[1.03] origin-center"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
                     />
 
                     {/* Transparent Click Overlay for seamless Play/Pause toggle */}
@@ -200,41 +226,63 @@ export default function AboutSection() {
                     )}
 
                     {/* Bottom Custom Control Bar */}
-                    <div className="absolute bottom-0 left-0 right-0 z-20 px-3 py-2 bg-gradient-to-t from-black/85 via-black/50 to-transparent flex items-center justify-between pointer-events-auto">
-                      {/* Play/Pause Button */}
-                      <button
-                        type="button"
-                        onClick={handleTogglePlay}
-                        className="px-2.5 py-1 rounded-md bg-black/60 hover:bg-[#c5a880] text-slate-200 hover:text-[#070d1e] border border-white/15 hover:border-[#c5a880] text-xs font-medium flex items-center gap-1.5 transition-colors"
-                      >
-                        {isPlaying ? (
-                          <>
-                            <Pause className="w-3.5 h-3.5 fill-current" />
-                            <span className="text-[10px]">Pause</span>
-                          </>
-                        ) : (
-                          <>
-                            <Play className="w-3.5 h-3.5 fill-current" />
-                            <span className="text-[10px]">Play</span>
-                          </>
-                        )}
-                      </button>
+                    <div className="absolute bottom-0 left-0 right-0 z-20 px-2.5 sm:px-3 py-2 bg-gradient-to-t from-black/85 via-black/50 to-transparent flex items-center justify-between pointer-events-auto gap-1.5">
+                      <div className="flex items-center gap-1.5">
+                        {/* Play/Pause Button */}
+                        <button
+                          type="button"
+                          onClick={handleTogglePlay}
+                          className="px-2.5 py-1 rounded-md bg-black/60 hover:bg-[#c5a880] text-slate-200 hover:text-[#070d1e] border border-white/15 hover:border-[#c5a880] text-xs font-medium flex items-center gap-1.5 transition-colors"
+                        >
+                          {isPlaying ? (
+                            <>
+                              <Pause className="w-3.5 h-3.5 fill-current" />
+                              <span className="text-[10px]">Pause</span>
+                            </>
+                          ) : (
+                            <>
+                              <Play className="w-3.5 h-3.5 fill-current" />
+                              <span className="text-[10px]">Play</span>
+                            </>
+                          )}
+                        </button>
 
-                      {/* Sound Mute/Unmute Button */}
+                        {/* Sound Mute/Unmute Button */}
+                        <button
+                          type="button"
+                          onClick={handleToggleMute}
+                          className="px-2.5 py-1 rounded-md bg-black/60 hover:bg-white/20 text-slate-200 hover:text-white border border-white/15 text-xs font-medium flex items-center gap-1.5 transition-colors"
+                        >
+                          {isMuted ? (
+                            <>
+                              <VolumeX className="w-3.5 h-3.5 text-rose-300" />
+                              <span className="text-[10px] text-rose-200">Unmute</span>
+                            </>
+                          ) : (
+                            <>
+                              <Volume2 className="w-3.5 h-3.5 text-emerald-400" />
+                              <span className="text-[10px] text-emerald-300">Sound On</span>
+                            </>
+                          )}
+                        </button>
+                      </div>
+
+                      {/* Fullscreen Button */}
                       <button
                         type="button"
-                        onClick={handleToggleMute}
-                        className="px-2.5 py-1 rounded-md bg-black/60 hover:bg-white/20 text-slate-200 hover:text-white border border-white/15 text-xs font-medium flex items-center gap-1.5 transition-colors"
+                        onClick={handleToggleFullscreen}
+                        className="px-2.5 py-1 rounded-md bg-black/60 hover:bg-[#c5a880] text-slate-200 hover:text-[#070d1e] border border-white/15 text-xs font-medium flex items-center gap-1.5 transition-colors"
+                        title={isFullscreen ? "Exit Fullscreen" : "Full Screen Video"}
                       >
-                        {isMuted ? (
+                        {isFullscreen ? (
                           <>
-                            <VolumeX className="w-3.5 h-3.5 text-rose-300" />
-                            <span className="text-[10px] text-rose-200">Unmute Audio</span>
+                            <Minimize2 className="w-3.5 h-3.5" />
+                            <span className="text-[10px] hidden xs:inline">Exit</span>
                           </>
                         ) : (
                           <>
-                            <Volume2 className="w-3.5 h-3.5 text-emerald-400" />
-                            <span className="text-[10px] text-emerald-300">Sound On</span>
+                            <Maximize2 className="w-3.5 h-3.5" />
+                            <span className="text-[10px] hidden xs:inline">Full Screen</span>
                           </>
                         )}
                       </button>
@@ -243,7 +291,7 @@ export default function AboutSection() {
                 </div>
 
                 {/* Key Quick Facts */}
-                <div className="w-full grid grid-cols-2 gap-2 text-left text-xs text-slate-300 border-t border-white/10 pt-4">
+                <div className="w-full grid grid-cols-2 gap-2 text-left text-xs text-slate-300 border-t border-white/10 pt-3">
                   <div>
                     <span className="text-[10px] uppercase text-slate-400 block">Jurisdiction</span>
                     <strong className="text-white">Chd · Pb · Hry · Del</strong>
