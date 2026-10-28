@@ -1,57 +1,173 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <!-- Primary Homepage: Varun Law Firm · Advocate Varun Aggarwal -->
   <url>
     <loc>https://varunlawfirm.com/</loc>
-    <lastmod>2026-10-11</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- Advocate Profile & Credentials -->
   <url>
     <loc>https://varunlawfirm.com/#about</loc>
-    <lastmod>2026-10-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://varunlawfirm.com/#practice-areas</loc>
-    <lastmod>2026-10-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://varunlawfirm.com/#courts</loc>
-    <lastmod>2026-10-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://varunlawfirm.com/#testimonials</loc>
-    <lastmod>2026-10-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://varunlawfirm.com/#booking</loc>
-    <lastmod>2026-10-11</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
+
+  <!-- Interactive Appointment Booking System -->
   <url>
-    <loc>https://varunlawfirm.com/#blog</loc>
-    <lastmod>2026-10-11</lastmod>
+    <loc>https://varunlawfirm.com/#booking</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Practice Areas & Specialized Legal Issues -->
+  <url>
+    <loc>https://varunlawfirm.com/#practice-areas</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Issue 1: Negotiable Instruments & Cheque Bounce (Sec. 138) -->
+  <url>
+    <loc>https://varunlawfirm.com/#negotiable-instruments</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- Issue 2: Marriage Protection & Life Liberty Petitions -->
+  <url>
+    <loc>https://varunlawfirm.com/#marriage-protection</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- Issue 3: Criminal Defense, Anticipatory Bail & FIR Quashing -->
+  <url>
+    <loc>https://varunlawfirm.com/#criminal-defense</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- Issue 4: NRI Legal Services & Ancestral Property Protection -->
+  <url>
+    <loc>https://varunlawfirm.com/#nri-legal-services</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- Issue 5: Family Law (498A, Domestic Violence, Maintenance & Custody) -->
+  <url>
+    <loc>https://varunlawfirm.com/#family-law-matrimonial</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- Issue 6: Debt Recovery & SARFAESI Defense (DRT/DRAT) -->
+  <url>
+    <loc>https://varunlawfirm.com/#debt-recovery</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- Issue 7: Real Estate & RERA Advocacy -->
+  <url>
+    <loc>https://varunlawfirm.com/#rera-real-estate</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- Issue 8: Central Administrative Tribunal (CAT) -->
+  <url>
+    <loc>https://varunlawfirm.com/#cat-service-matters</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
+
+  <!-- Issue 9: High Court & Civil Litigation -->
+  <url>
+    <loc>https://varunlawfirm.com/#civil-litigation</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- Issue 10: Consumer Protection & Deficiencies -->
+  <url>
+    <loc>https://varunlawfirm.com/#consumer-disputes</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Issue 11: Contract Drafting & Commercial Vetting -->
+  <url>
+    <loc>https://varunlawfirm.com/#commercial-contracts</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Issue 12: Regulatory Compliance & Legal Advisory -->
+  <url>
+    <loc>https://varunlawfirm.com/#regulatory-advisory</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Courts & Jurisdictions Section -->
+  <url>
+    <loc>https://varunlawfirm.com/#courts</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Client Testimonials & Feedback -->
+  <url>
+    <loc>https://varunlawfirm.com/#testimonials</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Legal Articles & Thought Leadership Blog -->
+  <url>
+    <loc>https://varunlawfirm.com/#blog</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Frequently Asked Questions (FAQ) -->
   <url>
     <loc>https://varunlawfirm.com/#faq</loc>
-    <lastmod>2026-10-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
+
+  <!-- Contact & Chambers Location -->
   <url>
     <loc>https://varunlawfirm.com/#contact</loc>
-    <lastmod>2026-10-11</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.90</priority>
   </url>
 </urlset>

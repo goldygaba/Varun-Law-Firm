@@ -47,13 +47,13 @@ export default function Hero({ onOpenBooking, onExplorePractice }: HeroProps) {
           {/* Left Column: Value Proposition & Advocate Credentials */}
           <div className="lg:col-span-7 flex flex-col items-start">
             
-            {/* Clean unboxed metadata kicker (NO PILL BOXES) */}
+            {/* Clean unboxed metadata kicker with Website & Lawyer Identity */}
             <div className="flex flex-wrap items-center gap-2 text-xs uppercase tracking-widest text-[#d8be98] font-semibold mb-4">
-              <span>Advocate & Legal Consultant</span>
+              <span className="text-white font-bold">Varun Law Firm</span>
               <span aria-hidden="true" className="text-slate-600">·</span>
-              <span>Bar Council of Punjab & Haryana</span>
+              <span>Chambers of Advocate Varun Aggarwal (LL.M)</span>
               <span aria-hidden="true" className="text-slate-600">·</span>
-              <span>Chandigarh Chambers</span>
+              <span>Punjab & Haryana High Court</span>
               <span aria-hidden="true" className="text-slate-600">·</span>
               <span className="text-[#ebd8ba]">Chandigarh · Punjab · Haryana · Delhi</span>
             </div>
@@ -62,16 +62,20 @@ export default function Hero({ onOpenBooking, onExplorePractice }: HeroProps) {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white tracking-tight leading-[1.12] mb-6 [text-wrap:balance]">
               Strategic Legal Counsel.<br />
               <span className="gold-gradient-text font-normal italic">
-                Unyielding Courtroom Advocacy.
+                Chambers of Advocate Varun Aggarwal
               </span>
             </h1>
 
-            {/* Concrete Value Statement */}
+            {/* Concrete Value Statement with top legal issues for Google ranking */}
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mb-8 font-light">
-              Representing businesses, property owners, and individuals before the{' '}
+              Led by <strong className="text-white font-medium">Advocate Varun Aggarwal (LL.M)</strong>, <strong className="text-white font-medium">Varun Law Firm</strong> delivers formidable litigation before the{' '}
               <strong className="text-white font-medium">Punjab & Haryana High Court</strong>,{' '}
-              <strong className="text-white font-medium">Debt Recovery Tribunals (DRT)</strong>, and{' '}
-              <strong className="text-white font-medium">RERA</strong>. Practicing from Chandigarh and actively working across Chandigarh, Punjab, Haryana, and Delhi.
+              <strong className="text-white font-medium">DRT Debt Recovery Tribunals</strong>,{' '}
+              <strong className="text-white font-medium">RERA Authorities</strong>,{' '}
+              <strong className="text-white font-medium">Sec. 138 Cheque Bounce Courts</strong>,{' '}
+              <strong className="text-white font-medium">Criminal Bail & FIR Quashing Benches</strong>,{' '}
+              <strong className="text-white font-medium">High Court Marriage Protection</strong>, and{' '}
+              <strong className="text-white font-medium">NRI Property Dispute Forums</strong> across Chandigarh, Punjab, Haryana, and Delhi.
             </p>
 
             {/* Primary Action Buttons + Direct Call & WhatsApp */}
